@@ -1,7 +1,7 @@
 import { TRPCProvider } from '@/src/utils/hooks/trpc';
 import { Header } from '@components/layout';
 
-import '../styles/globals.css';
+import '../styles/globals.scss';
 
 interface RootLayoutProps {
   children: React.ReactElement;
@@ -10,9 +10,7 @@ interface RootLayoutProps {
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <html>
-      <head>
-        <title>The Rick and Morty</title>
-      </head>
+      <head>{/* <title>The Rick and Morty</title> */}</head>
       <body>
         <TRPCProvider>
           <Header />

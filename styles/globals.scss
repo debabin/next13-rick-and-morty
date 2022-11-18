@@ -1,0 +1,49 @@
+@import '/styles/typography.scss';
+@import '/styles/reset.scss';
+@import '/styles/variables.scss';
+
+html,
+body {
+  background-color: #202329;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.2s;
+
+  &:hover {
+    color: $primary-default
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.characters_container {
+  padding: 40px;
+  max-width: 1120px;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  li {
+
+    @include mobile() {
+      width: 100%;
+    }
+  }
+}

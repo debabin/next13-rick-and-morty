@@ -8,6 +8,9 @@ const nextConfig = {
   includePaths: [path.join(__dirname, 'styles')],
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    domains: ['rickandmortyapi.com'],
+  },
 }
 
 module.exports = nextConfig

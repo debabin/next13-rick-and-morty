@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { httpBatchLink, loggerLink } from '@trpc/client';
@@ -24,7 +24,6 @@ function getBaseUrl() {
 }
 
 export const TRPCProvider = (props: { children: React.ReactNode }) => {
-  console.log('@', props)
   const [queryClient] = useState(() => new QueryClient());
   const [trpcClient] = useState(() =>
     trpc.createClient({
@@ -44,4 +43,4 @@ export const TRPCProvider = (props: { children: React.ReactNode }) => {
       <QueryClientProvider client={queryClient}>{props.children}</QueryClientProvider>
     </trpc.Provider>
   );
-}
+};

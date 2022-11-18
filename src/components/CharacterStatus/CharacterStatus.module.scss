@@ -1,0 +1,19 @@
+.status {
+    display: inline-block;
+    height: 0.5rem;
+    width: 0.5rem;
+    margin-right: 0.375rem;
+    border-radius: 50%;
+}
+
+.alive {
+    background: rgb(85, 204, 68);
+}
+
+.dead {
+    background: rgb(214, 61, 46);
+}
+
+.unknown {
+    background: rgb(158, 158, 158);
+}

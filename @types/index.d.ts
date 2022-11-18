@@ -15,17 +15,30 @@ interface CharacterEntity {
   url: string;
 }
 
+type Url = string;
+type Gender = 'Female' | 'Male' | 'Genderless' | 'unknown';
+type Status = 'alive' | 'dead' | 'unknown';
 interface Character {
-  id: string;
+  id: number;
   name: string;
-  status: string;
+  status: Status;
   species: string;
   type: string;
-  gender: string;
+  gender: Gender;
   origin: CharacterEntity;
   location: CharacterEntity;
   image: string;
-  episode: string[];
-  url: string;
+  episode: Url[];
+  url: Url;
+  created: string;
+}
+
+interface Episode {
+  id: number;
+  name: string;
+  air_date: string;
+  episode: string;
+  characters: Url[];
+  url: Url;
   created: string;
 }

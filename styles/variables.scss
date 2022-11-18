@@ -1,0 +1,23 @@
+/* text */
+$title: #FFFFFF;
+$body-primary: #FFFFFF;
+$body-secondary: #9E9E9E;
+
+/* background */
+$grey-primary-bg: #202329;
+$grey-secondary-bg: #3C3E44;
+$overlay: rgba(41, 41, 41, 0.3);
+$additional: rgba(11, 22, 41, 0.8);
+
+/* primary */
+$primary-default: #2cde00;
+$primary-pressed: #D93B3B;
+$primary-hover: #FF7575;
+
+$mobile-query: 70px;
+
+@mixin mobile {
+  @media (max-width: #{$mobile-query}) {
+    @content;
+  }
+}
