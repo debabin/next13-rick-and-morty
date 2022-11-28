@@ -1,0 +1,25 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model challenge {
+  id         Int      @id @default(autoincrement())
+  name       String
+  date       DateTime
+  score      Int
+  timeOfGame Int
+}
+
+model character {
+  id    Int    @id @default(autoincrement())
+  name  String @unique @db.VarChar(255)
+  image String @unique @db.VarChar(255)
+  wins  Int    @default(0)
+}
