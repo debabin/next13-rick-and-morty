@@ -1,14 +1,20 @@
 @import '/styles/variables.scss';
 
+.banner {
+    color: $title;
+    font-weight: 900;
+    font-size: 60px;
+}
+
 .title-1 {
     color: $title;
     font-weight: 900;
-    font-size: 5.625rem;
+    font-size: 20px;
 }
 
 .title-2 {
     @extend .title-1;
-    font-size: 1.5rem;
+    font-size: 17px;
 }
 
 .sub-title-1 {

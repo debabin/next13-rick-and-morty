@@ -1,0 +1,38 @@
+@import '/styles/variables.scss';
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 7px 15px;
+    border: 1.5px solid $body-secondary;
+    border-radius: 10px;
+    background-color: inherit;
+    transition: 0.2s;
+
+    &:enabled {
+      &:hover {
+        transform: scale(1.01);
+        border: 1.5px solid $primary-default;
+      }
+    }
+    
+    &:disabled {
+      cursor: default;
+      opacity: 0.5;
+    }
+}
+
+.start_icon, .end_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    svg {
+      fill: $body-secondary;
+      width: 24px;
+      height: 24px;
+    }
+  }

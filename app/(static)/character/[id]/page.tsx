@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { caller } from '@/server/routes';
-import { Typography, CharacterStatus } from '@/src/components';
+import { Typography, Characters } from '@/src/components';
 
 import styles from './page.module.scss';
 import Episodes from './(components)/Episodes';
@@ -42,7 +42,7 @@ const CharacterPage = async ({ params }: CharactersPageProps) => {
 
           <div>
             <div>
-              <CharacterStatus species={character.species} status={character.status} />
+              <Characters.Status species={character.species} status={character.status} />
             </div>
             <div className={styles.info}>
               <Typography tag='span' variant='sub-title-2'>

@@ -1,19 +1,47 @@
 import Link from 'next/link';
 
-import { Logo } from '@components/icons';
-import { ROUTES } from '@utils/constants';
+import { Typography } from '@/components';
+import { Logo } from '@/components/icons';
+import { ROUTES } from '@/utils/constants';
 
-export const Header = () => (
-  <header className='w-full bg-gray-300'>
-    <div className='container flex justify-between py-4 items-center text-slate-700'>
-      <Logo />
-      <nav>
-        <ul>
-          <li>
-            <Link href={ROUTES.CHARACTERS}>Characters</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+import styles from './Header.module.scss';
+
+export const Header: React.FC = () => (
+  <header className={styles.header}>
+    <Link prefetch={false} href={ROUTES.ROOT}>
+      <Logo className={styles.logo} />
+    </Link>
+    <nav>
+      <ul className={styles.links}>
+        <li>
+          <Typography variant='sub-title-2'>
+            <Link prefetch={false} href={ROUTES.GAMES}>
+              Games
+            </Link>
+          </Typography>
+        </li>
+        <li>
+          <Typography variant='sub-title-2'>
+            <Link prefetch={false} href={ROUTES.CHARACTERS}>
+              Characters
+            </Link>
+          </Typography>
+        </li>
+        <li>
+          <Typography variant='sub-title-2'>
+            <Link prefetch={false} href={ROUTES.EPISODES}>
+              Episodes
+            </Link>
+          </Typography>
+        </li>
+        <li>
+          <Typography variant='sub-title-2'>
+            <Link prefetch={false} href={ROUTES.LOCATIONS}>
+              Locations
+            </Link>
+          </Typography>
+        </li>
+      </ul>
+    </nav>
   </header>
 );

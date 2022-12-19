@@ -1,0 +1,35 @@
+@import '/styles/variables.scss';
+$shine-color: #e8e8e8;
+$animation-duration: 1.6s;
+
+.skeleton {
+    display: inline-block;
+    height: 1em;
+    position: relative;
+    overflow: hidden;
+    background-color: $grey-secondary-bg;
+  
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: translateX(-100%);
+      background-image: linear-gradient(
+        90deg,
+        rgba($body-secondary, 0) 0,
+        rgba($body-secondary, 0.1) 20%,
+        rgba($body-secondary, 0.3) 40%,
+        rgba($body-secondary, 0)
+      );
+      animation: shimmer $animation-duration infinite;
+      content: '';
+    }
+  
+    @keyframes shimmer {
+      100% {
+        transform: translateX(100%);
+      }
+    }
+  }

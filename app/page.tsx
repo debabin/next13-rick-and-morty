@@ -1,28 +1,31 @@
-import { Typography } from '@components/Typography/Typography';
 import { caller } from '@/server/routes';
-import { getRandomCharactersPage } from '@/src/utils';
-import { CharacterCard } from '@/src/components';
+import { getRandomCharactersIds } from '@/utils/helpers';
+import { Characters, Typography } from '@/components';
 
-import styles from './page.module.scss';
-
+export const revalidate = 0;
+export const dynamic = 'force-dynamic';
 const RootPage = async () => {
-  const charactersResponse = await caller.getCharacters({
-    params: { page: getRandomCharactersPage() }
+  const characterInfo = await caller.getCharactersInfo();
+  const charactersIds = getRandomCharactersIds(8, characterInfo.response.info.count);
+
+  const charactersResponse = await caller.getCharactersMultiple({
+    params: { multiple: charactersIds }
   });
-  const characters = charactersResponse.response.results.slice(0, 9);
+
+  const characters = charactersResponse.response;
 
   return (
-    <section>
-      <Typography variant='title-1' tag='h1'>
+    <section className='page'>
+      <Typography variant='banner' tag='h1'>
         The Rick and Morty
       </Typography>
 
-      <ul className={styles.characters_container}>
-        <li>
-          {characters.map((character) => (
-            <CharacterCard key={character.id} character={character} />
-          ))}
-        </li>
+      <ul className='entities_container'>
+        {characters.map((character) => (
+          <li key={character.id}>
+            <Characters.Card character={character} />
+          </li>
+        ))}
       </ul>
     </section>
   );

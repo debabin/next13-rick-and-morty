@@ -6,25 +6,25 @@ interface EpisodesProps {
 }
 
 const Episodes: React.FC<EpisodesProps> = ({ episode }) => {
-  const episodesResponse = trpc.getEpisodes.useQuery({
-    params: {
-      multiple: episode
-        .map((episodeLink) => episodeLink.replace('https://rickandmortyapi.com/api/episode/', ''))
-        .join(',')
-    }
-  });
+  // const episodesResponse = trpc.getEpisodes.useQuery({
+  //   params: {
+  //     multiple: episode
+  //       .map((episodeLink) => episodeLink.replace('https://rickandmortyapi.com/api/episode/', ''))
+  //       .join(',')
+  //   }
+  // });
 
-  if (!episodesResponse.data || episodesResponse.isLoading) {
-    return <div>loading</div>;
-  }
+  // if (!episodesResponse.data || episodesResponse.isLoading) {
+  //   return <div>loading</div>;
+  // }
 
-  const episodes = episodesResponse.data.response;
+  // const episodes = episodesResponse.data.response.results;
 
   return (
     <div>
-      {episodes.map((episode) => (
+      {/* {episodes.map((episode) => (
         <div key={episode.id}>{episode.name}</div>
-      ))}
+      ))} */}
     </div>
   );
 };

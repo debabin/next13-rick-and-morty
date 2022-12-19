@@ -1,7 +1,14 @@
 import classnames from 'classnames';
 
-type Tag = 'div' | 'span' | 'h1' | 'h2' | 'p';
-type Variant = 'title-1' | 'title-2' | 'body-1' | 'body-2' | 'sub-title-1' | 'sub-title-2';
+type Tag = 'div' | 'span' | 'h1' | 'h2' | 'p' | 'label';
+type Variant =
+  | 'banner'
+  | 'title-1'
+  | 'title-2'
+  | 'body-1'
+  | 'body-2'
+  | 'sub-title-1'
+  | 'sub-title-2';
 
 interface TypographyProps {
   tag?: Tag;

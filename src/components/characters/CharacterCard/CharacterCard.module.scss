@@ -1,0 +1,46 @@
+@import '/styles/variables.scss';
+
+.container {
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    overflow: hidden;
+    background-color: $grey-secondary-bg;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px, rgb(0 0 0 / 6%) 0px 2px 4px -1px;
+
+    @include media(no-mobile-screens) {
+        width: 500px;
+        flex-direction: row;
+    }
+}
+
+.image_container {
+    width: 100%;
+    height: 300px;
+    position: relative;
+
+    img {
+        width: 100%;
+        object-position: center center;
+        object-fit: cover;
+    }
+
+    @include media(no-mobile-screens) {
+        height: 150px;
+        width: 150px;
+    }
+}
+
+.info {
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

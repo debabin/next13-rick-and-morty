@@ -9,10 +9,10 @@ datasource db {
   relationMode = "prisma"
 }
 
-model challenge {
-  id         Int      @id @default(autoincrement())
+model deadAliveUnknownGame {
+  id         Int    @id @default(autoincrement())
   name       String
-  date       DateTime
+  startTime  BigInt
   score      Int
   timeOfGame Int
 }

@@ -10,14 +10,26 @@ $overlay: rgba(41, 41, 41, 0.3);
 $additional: rgba(11, 22, 41, 0.8);
 
 /* primary */
+$static-default: #00aede;
+$dynamic-default: #de6800;
 $primary-default: #2cde00;
 $primary-pressed: #D93B3B;
 $primary-hover: #FF7575;
 
-$mobile-query: 70px;
+$mobile-query: 700px;
 
 @mixin mobile {
   @media (max-width: #{$mobile-query}) {
     @content;
+  }
+}
+
+$small: 700px;
+
+@mixin media($media) {
+  @if $media == no-mobile-screens {
+    @media only screen and (min-width: $small) {
+      @content;
+    }
   }
 }

@@ -25,25 +25,58 @@ a {
   box-sizing: border-box;
 }
 
+.container {
+  padding: 0 20px;
+  max-width: 1070px;
+  margin: 0 auto;
+}
 
 .page {
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.characters_container {
-  padding: 40px;
-  max-width: 1120px;
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  @include media(no-mobile-screens) {
+      justify-content: left;
+  }
+}
+
+.entities_container {
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 
+  
   li {
+    width: 100%;
 
-    @include mobile() {
-      width: 100%;
+    @include media(no-mobile-screens) {
+      width: inherit;
+    }
+  }
+}
+
+.episodes_container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  
+  li {
+    width: 100%;
+
+    @include media(no-mobile-screens) {
+      width: inherit;
     }
   }
 }
