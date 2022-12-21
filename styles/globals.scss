@@ -17,7 +17,7 @@ a {
   transition: 0.2s;
 
   &:hover {
-    color: $primary-default
+    color: $primary-default;
   }
 }
 
@@ -43,9 +43,18 @@ a {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  
+  button {
+    width: 100%;
+  }
 
   @include media(no-mobile-screens) {
-      justify-content: left;
+    justify-content: left;
+    
+    button {
+      width: auto;
+    }
+
   }
 }
 
@@ -55,7 +64,6 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
 
-  
   li {
     width: 100%;
 
@@ -71,7 +79,6 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
 
-  
   li {
     width: 100%;
 

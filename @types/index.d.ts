@@ -48,6 +48,11 @@ interface LocationFilter {
   type?: Location['type'];
 }
 
+interface EpisodeFilter {
+  page?: number;
+  name?: Episode['name'];
+}
+
 interface Episode {
   id: number;
   name: string;

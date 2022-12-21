@@ -21,7 +21,7 @@ const LocationLayout = async ({ children, params }: LocationsLayoutProps) => {
         current={{ label: location.name }}
         items={[
           { label: 'Main', href: ROUTES.ROOT },
-          { label: 'Locations', href: ROUTES.EPISODES }
+          { label: 'Locations', href: ROUTES.LOCATIONS }
         ]}
       />
       {children}

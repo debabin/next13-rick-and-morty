@@ -1,40 +1,40 @@
 @import '/styles/variables.scss';
 
 .banner {
-    color: $title;
-    font-weight: 900;
-    font-size: 60px;
+  color: $title;
+  font-weight: 900;
+  font-size: 60px;
 }
 
 .title-1 {
-    color: $title;
-    font-weight: 900;
-    font-size: 20px;
+  color: $title;
+  font-weight: 900;
+  font-size: 20px;
 }
 
 .title-2 {
-    @extend .title-1;
-    font-size: 17px;
+  @extend .title-1;
+  font-size: 17px;
 }
 
 .sub-title-1 {
-    color: $body-secondary;
-    font-size: 16px;
-    font-weight: 500;
+  color: $body-secondary;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .sub-title-2 {
-    @extend .sub-title-1;
-    font-size: 14px;
+  @extend .sub-title-1;
+  font-size: 14px;
 }
 
 .body-1 {
-    color: $body-secondary;
-    font-size: 16px;
-    font-weight: 200;
+  color: $body-secondary;
+  font-size: 16px;
+  font-weight: 200;
 }
 
 .body-2 {
-    @extend .body-1;
-    font-size: 14px;
+  @extend .body-1;
+  font-size: 14px;
 }

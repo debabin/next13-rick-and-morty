@@ -2,7 +2,7 @@ import { Characters, Typography } from '@/components';
 import { caller } from '@/server/routes';
 
 export const generateStaticParams = async () => {
-  const locationsCount = (await caller.getLocations()).response.info.count;
+  const locationsCount = (await caller.getLocationsInfo()).response.info.count;
 
   return Array.from({ length: locationsCount }, (_: any, index: number) => index + 1).map((id) => ({
     id: id.toString()
@@ -15,6 +15,7 @@ interface LocationsPageProps {
   };
 }
 
+export const dynamic = 'force-dynamic';
 const LocationPage = async ({ params }: LocationsPageProps) => {
   const locationResponse = await caller.getLocation({ params: { id: +params.id } });
   const location = locationResponse.response;

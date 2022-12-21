@@ -30,5 +30,16 @@ export interface GetCharactersMultipleParams {
 export const getCharactersMultiple = async ({
   params: { multiple, ...params },
   config
-}: GetCharactersMultipleParams) =>
-  await api.get<Character[]>(`character/${multiple}`, { ...config, params });
+}: GetCharactersMultipleParams) => {
+  const charactersMultipleResponse = await api.get<Character[] | Character>(
+    `character/${multiple}`,
+    { ...config, params }
+  );
+
+  if (Array.isArray(charactersMultipleResponse.data)) {
+    const data = charactersMultipleResponse.data;
+    return { ...charactersMultipleResponse, data };
+  }
+
+  return { ...charactersMultipleResponse, data: [charactersMultipleResponse.data] };
+};

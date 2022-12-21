@@ -1,20 +1,20 @@
 @import '/styles/variables.scss';
 
 .banner {
-    padding: 15px;
-    display: flex;
-    gap: 15px;
-    margin: 25px 0;
-    flex-direction: column;
-    border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  gap: 15px;
+  margin: 25px 0;
+  flex-direction: column;
+  border-radius: 15px;
 }
 
 .dynamic_banner {
-    @extend .banner;
-    border: 1.5px solid $dynamic-default;
+  @extend .banner;
+  border: 1.5px solid $dynamic-default;
 }
 
 .static_banner {
-    @extend .banner;
-    border: 1.5px solid $static-default;
+  @extend .banner;
+  border: 1.5px solid $static-default;
 }

@@ -15,45 +15,54 @@ interface LocationsPageProps {
 }
 
 const LocationsPage: React.FC<LocationsPageProps> = ({ searchParams }) => {
-  const [filter, setFilter] = React.useState({
+  const [filters, setFilters] = React.useState({
     name: searchParams?.name ?? '',
     type: searchParams?.type ?? ''
   });
   const [page, setPage] = React.useState(1);
-  const getLocationsQuery = trpc.getLocations.useQuery({
-    params: { page },
-    filters: { ...filter }
-  });
+  const getLocationsQuery = trpc.getLocations.useQuery(
+    {
+      params: { page },
+      filters: { ...filters }
+    },
+    { keepPreviousData: true }
+  );
 
-  const showPreviousPagination = !!(page - 1);
-  const showNextPagination = page + 1 !== 10;
+  const showPreviousPagination = !!getLocationsQuery.data?.response.info?.prev;
+  const showNextPagination = !!getLocationsQuery.data?.response.info?.next;
+  const showPagination = showPreviousPagination || showNextPagination;
 
   const isLoading = getLocationsQuery.isLoading;
   const locations = getLocationsQuery.data?.response.results;
 
   return (
     <section className='page'>
-      <div className='pagination'>
-        {showPreviousPagination && (
-          <IconButton
-            onClick={() => setPage(page - 1)}
-            icon={<ArrowLeftIcon />}
-            disabled={isLoading}
-          />
-        )}
-        {showNextPagination && (
-          <IconButton
-            onClick={() => setPage(page + 1)}
-            icon={<ArrowRightIcon />}
-            disabled={isLoading}
-          />
-        )}
-      </div>
+      {showPagination && (
+        <div className='pagination'>
+          {showPreviousPagination && (
+            <IconButton
+              onClick={() => setPage(page - 1)}
+              icon={<ArrowLeftIcon />}
+              disabled={isLoading}
+            />
+          )}
+          {showNextPagination && (
+            <IconButton
+              onClick={() => setPage(page + 1)}
+              icon={<ArrowRightIcon />}
+              disabled={isLoading}
+            />
+          )}
+        </div>
+      )}
 
       <Filter
         form={{
-          initialValues: { ...filter },
-          onSubmit: (values) => setFilter(values)
+          initialValues: { ...filters },
+          onSubmit: (values) => {
+            setPage(1);
+            setFilters(values);
+          }
         }}
         isLoading={isLoading}
       />

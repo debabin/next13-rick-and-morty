@@ -2,14 +2,14 @@
 @import '../skeletons.module.scss';
 
 .container {
-    @extend .skeleton;
-    height: 300px;
-    width: 100%;
-    border-radius: 10px;
+  @extend .skeleton;
+  height: 300px;
+  width: 100%;
+  border-radius: 10px;
 
-    @include media(no-mobile-screens) {
-        width: 500px;
-        height: 150px;
-        flex-direction: row;
-    }
+  @include media(no-mobile-screens) {
+    width: 500px;
+    height: 150px;
+    flex-direction: row;
+  }
 }

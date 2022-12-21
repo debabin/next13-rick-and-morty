@@ -1,23 +1,23 @@
 @import '/styles/variables.scss';
 
 .container {
-    padding: 10px;
-    width: 100%;
-    flex-direction: column;
-    display: flex;
-    overflow: hidden;
-    background: $grey-secondary-bg;
-    border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  overflow: hidden;
+  background: $grey-secondary-bg;
+  border-radius: 10px;
 
-    @include media(no-mobile-screens) {
-        width: 500px;
-        flex-direction: row;
-    }
+  @include media(no-mobile-screens) {
+    width: 500px;
+    flex-direction: row;
+  }
 }
 
 .info {
-    padding: 10px 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
