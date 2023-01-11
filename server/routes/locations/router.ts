@@ -1,6 +1,6 @@
 import { getLocation, getLocations } from '@/utils/api';
 
-import { wrapSuccess, trpc, wrapFailure } from '../../utils';
+import { trpc, wrapSuccess } from '../../utils';
 
 import { LOCATION_INPUTS } from './schemas';
 

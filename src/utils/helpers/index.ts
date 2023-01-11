@@ -1,3 +1,3 @@
-export * from './getRandomCharactersPage';
-export * from './getRandomCharactersIds';
 export * from './getRandomCharactersId';
+export * from './getRandomCharactersIds';
+export * from './getRandomCharactersPage';

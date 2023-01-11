@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import { ROUTES } from '@/utils/constants';
 import { Typography } from '@/components';
+import { ROUTES } from '@/utils/constants';
 
 import styles from './EpisodeCard.module.scss';
 

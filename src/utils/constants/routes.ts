@@ -6,5 +6,8 @@ export const ROUTES = {
   CHARACTER: '/character',
   EPISODES: '/episodes',
   EPISODE: '/episode',
-  GAMES: '/games'
+  GAMES: '/games',
+  GAME_PORTAL_FIGHT: '/games/portal-fight',
+  GAME_DIED_ALIVE_UNKNOWN: '/games/died-alive-unknown',
+  GAME_RESULTS: '/games/results'
 };

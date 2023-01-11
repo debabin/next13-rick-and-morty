@@ -1,0 +1,56 @@
+@import '/styles/variables.scss';
+
+.table {
+  display: flex;
+  flex-direction: column;
+  background-color: $grey-secondary-bg;
+  border-radius: 10px;
+  padding: 10px 15px;
+  width: 100%;
+  gap: 35px;
+
+  @include media(no-mobile-screens) {
+    width: 50%;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+.best_player {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 15px;
+  gap: 5px;
+
+  div {
+    @extend .row;
+    background-color: $grey-secondary-bg;
+    border-radius: 10px;
+    padding: 5px 10px;
+  }
+
+  @include media(no-mobile-screens) {
+    width: 50%;
+  }
+}
+
+.died_alive_unknown_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+}

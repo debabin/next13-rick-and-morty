@@ -1,0 +1,11 @@
+@import '/styles/variables.scss';
+
+.input {
+  color: $title;
+  font-size: 16px;
+  padding: 7px 15px;
+  border: 1.5px solid $body-secondary;
+  border-radius: 10px;
+  background-color: inherit;
+  transition: 0.2s;
+}

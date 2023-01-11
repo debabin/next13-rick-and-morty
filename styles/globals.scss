@@ -43,18 +43,17 @@ a {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  
+
   button {
     width: 100%;
   }
 
   @include media(no-mobile-screens) {
     justify-content: left;
-    
+
     button {
       width: auto;
     }
-
   }
 }
 

@@ -1,6 +1,6 @@
 import { getEpisode, getEpisodes, getEpisodesMultiple } from '@/utils/api';
 
-import { wrapSuccess, trpc } from '../../utils';
+import { trpc, wrapSuccess } from '../../utils';
 
 import { EPISODE_INPUTS } from './schemas';
 

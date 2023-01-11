@@ -1,5 +1,11 @@
 import React from 'react';
 
-export const Input = () => {
-  return <div>Input</div>;
-};
+import styles from './Input.module.scss';
+
+type InputProps = React.ComponentPropsWithRef<'input'>;
+
+export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => (
+  <input {...props} ref={ref} className={styles.input} />
+));
+
+Input.displayName = 'Input';

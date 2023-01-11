@@ -1,0 +1,38 @@
+@import '/styles/variables.scss';
+
+.games {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-direction: column;
+
+  a {
+    width: 100%;
+  }
+
+  @include media(no-mobile-screens) {
+    flex-direction: row;
+  }
+}
+
+.game {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: $grey-secondary-bg;
+  border-radius: 10px;
+  padding: 30px 30px;
+  transition: 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.results {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

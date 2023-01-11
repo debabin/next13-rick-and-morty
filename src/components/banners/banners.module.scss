@@ -9,7 +9,7 @@
   border-radius: 15px;
 }
 
-.dynamic_banner {
+.orange_banner {
   @extend .banner;
   border: 1.5px solid $dynamic-default;
 }

@@ -1,9 +1,10 @@
 'use client';
 
+import { useState } from 'react';
+import { toast } from 'react-toastify';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { httpBatchLink, loggerLink } from '@trpc/client';
 import { createTRPCReact } from '@trpc/react-query';
-import { useState } from 'react';
 
 import type { AppRouter } from '@/server/routes';
 
@@ -28,8 +29,13 @@ export const TRPCProvider = (props: { children: React.ReactNode }) => {
     () =>
       new QueryClient({
         defaultOptions: {
+          mutations: {
+            onError: (error) => toast.error((error as Error).message)
+          },
           queries: {
-            refetchOnWindowFocus: false
+            refetchOnWindowFocus: false,
+            retry: false,
+            onError: (error) => toast.error((error as Error).message)
           }
         }
       })

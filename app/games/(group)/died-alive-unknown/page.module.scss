@@ -1,0 +1,24 @@
+@import '/styles/variables.scss';
+
+.died_alive_unknown {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 25px;
+  background-color: $grey-secondary-bg;
+  position: relative;
+  border-radius: 10px;
+
+  img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+  }
+
+  @include media(no-mobile-screens) {
+    max-width: 550px;
+  }
+}

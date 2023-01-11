@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { ROUTES } from '@/utils/constants';
 import { Typography } from '@/components';
+import { ROUTES } from '@/utils/constants';
 
 import { CharacterStatus } from '../CharacterStatus/CharacterStatus';
 

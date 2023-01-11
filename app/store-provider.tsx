@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
 
 export type Store = {
   counts: {
@@ -32,7 +33,12 @@ interface StoreProviderProps {
 }
 
 const StoreProvider: React.FC<StoreProviderProps> = ({ children, value }) => {
-  return <StoreContext.Provider value={{ store: value }}>{children}</StoreContext.Provider>;
+  return (
+    <StoreContext.Provider value={{ store: value }}>
+      {children}
+      <ToastContainer />
+    </StoreContext.Provider>
+  );
 };
 
 export const useStore = () => React.useContext(StoreContext).store;

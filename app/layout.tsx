@@ -1,6 +1,6 @@
+import Layout from '@/components/layout';
 import { caller } from '@/server/routes';
 import { TRPCProvider } from '@/utils/hooks/trpc';
-import Layout from '@/components/layout';
 
 import StoreProvider from './store-provider';
 
@@ -9,6 +9,11 @@ import '../styles/globals.scss';
 interface RootLayoutProps {
   children: React.ReactNode;
 }
+
+const seo = {
+  title: '🔫 Rick and Morty app',
+  description: 'Omg morty ?'
+};
 
 const RootLayout = async ({ children }: RootLayoutProps) => {
   const [characterCount, episodesCount, locationsCount] = await Promise.all([
@@ -26,7 +31,8 @@ const RootLayout = async ({ children }: RootLayoutProps) => {
   return (
     <html>
       <head>
-        <title>rick and morty app</title>
+        <title>{seo.title}</title>
+        <meta name='description' content={seo.description} />
         <meta name='viewport' content='width=device-width,initial-scale=1' />
       </head>
       <body className='container'>

@@ -1,6 +1,5 @@
 generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["referentialIntegrity"]
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -12,9 +11,9 @@ datasource db {
 model deadAliveUnknownGame {
   id         Int    @id @default(autoincrement())
   name       String
-  startTime  BigInt
+  startTime  String
   score      Int
-  timeOfGame Int
+  timeOfGame String
 }
 
 model character {

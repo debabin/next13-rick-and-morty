@@ -1,6 +1,6 @@
+import { Characters, Typography } from '@/components';
 import { caller } from '@/server/routes';
 import { getRandomCharactersIds } from '@/utils/helpers';
-import { Characters, Typography } from '@/components';
 
 export const revalidate = 0;
 export const dynamic = 'force-dynamic';

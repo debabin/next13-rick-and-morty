@@ -2,8 +2,8 @@ import { initTRPC } from '@trpc/server';
 
 import { charactersRouter } from './characters/router';
 import { episodesRouter } from './episodes/router';
+import { gamesRouter } from './games/router';
 import { locationsRouter } from './locations/router';
-import { gamesRouter } from './games';
 
 const trpc = initTRPC.create();
 

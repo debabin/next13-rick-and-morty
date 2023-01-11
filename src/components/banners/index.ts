@@ -1,9 +1,9 @@
-import DynamicBanner from './DynamicBanner/DynamicBanner';
-import StaticBanner from './StaticBanner/StaticBanner';
+import BlueBanner from './BlueBanner/BlueBanner';
+import OrangeBanner from './OrangeBanner/OrangeBanner';
 
 export const Banners = {
-  DynamicBanner,
-  StaticBanner
+  OrangeBanner,
+  BlueBanner
 };
 
 export default Banners;
