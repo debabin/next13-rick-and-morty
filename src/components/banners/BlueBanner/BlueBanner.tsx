@@ -5,7 +5,7 @@ import { Typography } from '../../Typography/Typography';
 import styles from '../banners.module.scss';
 
 export const BlueBanner = () => (
-  <div className={styles.static_banner}>
+  <div className={styles.blue_banner}>
     <Typography variant='title-1' tag='h2'>
       🧊 blue banner
     </Typography>

@@ -26,6 +26,8 @@ interface CharacterPageProps {
   };
 }
 
+export const revalidate = 0;
+export const dynamic = 'force-dynamic';
 const CharacterPage = async ({ params }: CharacterPageProps) => {
   if (+params.id === 1) return notFound();
 

@@ -2,15 +2,15 @@ import React from 'react';
 
 import { Banners } from '@/components';
 
-interface DynamicLayoutProps {
+interface BlueBannerLayoutProps {
   children: React.ReactNode;
 }
 
-const DynamicLayout = ({ children }: DynamicLayoutProps) => (
+const BlueBannerLayout = ({ children }: BlueBannerLayoutProps) => (
   <>
     <Banners.BlueBanner />
     {children}
   </>
 );
 
-export default DynamicLayout;
+export default BlueBannerLayout;
